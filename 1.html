@@ -1,11 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-     
+    <div id="app">
+        <p>{{name}}</p>
+        <p>{{live?"還活著":"死掉了"}}</p>
+        <p>{{music[0]}}</p>
+        <p>{{skill["f2e"][0]}}</p>
+        <h6 v-text="age"></h6>
+        <h6 v-html="content"></h6>
+        <h6 v-html="music"></h6>
+    </div>
+    <script src="https://unpkg.com/vue@3.4.27/dist/vue.global.js"></script>
+    <script>
+        // console.log(Vue)
+        const app = Vue.createApp({
+            data() {
+                return {
+                    name: 'ingrid',
+                    age: 37,
+                    live: true,
+                    music: ['aimer', 'one ok rock', 'mamamoo'],
+                    skill: {
+                        f2e: ['vue', 'react'],
+                        b2e: ['php', 'node.js', 'ASP.net']
+                    },
+                    gender: null,
+                    content: '<div style="color: red;">哈哈</div>'
+                }
+            },
+        })
+        app.mount('#app')
+    </script>
 </body>
+
 </html>
